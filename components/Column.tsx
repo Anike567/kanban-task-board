@@ -23,7 +23,10 @@ const Column = ({ title, bgColor, tasks }: ColumnProps) => {
         {tasks.map((task) => (
           <div
             key={task.id}
-            onClick={() => setModal(<TaskDetail task={task} />)}
+            onClick={(e) => {
+              e.stopPropagation();
+              setModal(<TaskDetail task={task} />)
+            }}
             className="cursor-pointer active:scale-[0.98] transition-transform"
           >
             <TaskCard key={task.id} task={task} />

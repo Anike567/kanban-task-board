@@ -19,29 +19,29 @@ export default function TaskCard({ task }: TaskCardProps): ReactNode {
             <div className="flex justify-between items-start gap-3">
                 <div className="min-w-0 flex-1">
                     <p className="text-gray-800 font-bold leading-tight break-words whitespace-normal">
-                        {task.title.length > 100 
-                            ? `${task.title.slice(0, 100)}...` 
+                        {task.title.length > 100
+                            ? `${task.title.slice(0, 100)}...`
                             : task.title}
                     </p>
                 </div>
 
-                <div className="flex gap-1 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                <div className="flex gap-1 flex-shrink-0 opacity-0 group-hover:opacity-100 transition-opacity p-5">
                     <button
-                        onClick={() => setModal(<EditTask task={task} />)}
+                        onClick={(e) => { e.stopPropagation(); setModal(<EditTask task={task} />) }}
                         className="p-1.5 hover:bg-blue-50 text-gray-400 hover:text-blue-600 rounded-lg transition-colors"
                     >
-                        <Pencil size={14} />
+                        <Pencil size={20} />
                     </button>
                     <button
-                        onClick={() => deleteTask(task.id)}
+                        onClick={(e) => { e.stopPropagation(); deleteTask(task.id) }}
                         className="p-1.5 hover:bg-red-50 text-gray-400 hover:text-red-600 rounded-lg transition-colors"
                     >
-                        <Trash2 size={14} />
+                        <Trash2 size={20} />
                     </button>
                 </div>
             </div>
 
-          
+
             <p className="text-xs text-gray-500 mt-2 line-clamp-3 leading-relaxed break-words">
                 {task.description}
             </p>
