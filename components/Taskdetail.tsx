@@ -2,7 +2,7 @@ import { type Task } from "../types/task";
 import { useTasks } from "../hooks/task";
 import { useModal } from "../hooks/modal";
 import { Calendar, Tag, Trash2, Pencil, Hash } from "lucide-react";
-import EditTask from "./EditTask";
+import EditTask from "./Edittask";
 
 interface TaskDetailProps {
   task: Task;

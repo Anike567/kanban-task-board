@@ -3,7 +3,7 @@ import { type ReactNode } from "react";
 import { Trash2, Pencil } from "lucide-react";
 import { useTasks } from "../hooks/task";
 import { useModal } from "../hooks/modal";
-import EditTask from "./EditTask";
+import EditTask from "./Edittask";
 
 interface TaskCardProps {
     task: Task;
